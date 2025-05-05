@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import ProductList from "./pages/ProductList";
-import ProductDetail from "./pages/ProductDetail.tsx";
+import ProductList from "./pages/ProductList/index.tsx";
+import ProductDetail from "./pages/ProductDetail.tsx/index.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
