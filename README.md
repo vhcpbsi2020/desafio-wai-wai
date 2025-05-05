@@ -1,54 +1,74 @@
-# React + TypeScript + Vite
+# Produtos App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta é uma aplicação React com TypeScript que permite listar e visualizar detalhes de produtos, utilizando a API DummyJSON para obter os dados.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- React Router (para navegação entre páginas)
+- TanStack Query (React Query) para gerenciamento de dados assíncronos
+- Tailwind CSS para estilização
+- Styled Components para estilização de componentes específicos
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Listagem paginada de produtos
+- Visualização detalhada de produtos
+- Interface responsiva
+- Operações de adição, atualização e exclusão de produtos (simuladas pela API DummyJSON)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js (v14+)
+- npm ou yarn
+
+### Passos para Execução
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/vhcpbsi2020/desafio-wai-wai.git
+cd produtos-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
 ```
+
+3. Execute o projeto em modo de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+4. Abra o navegador e acesse `http://localhost:5173`
+
+## Estrutura do Projeto
+
+```
+src/
+├── components/         # Componentes reutilizáveis
+├── pages/              # Páginas da aplicação
+├── services/           # Serviços para comunicação com a API
+├── hooks/              # Hooks personalizados
+├── types/              # Definições de tipos TypeScript
+├── App.tsx             # Componente principal da aplicação
+└── main.tsx            # Ponto de entrada da aplicação
+```
+
+## Sobre a API
+
+Este projeto utiliza a API DummyJSON (https://dummyjson.com/) para simular um backend com dados de produtos. 
+As operações de CRUD são simuladas pela API, mas não afetam realmente os dados armazenados no servidor.
+
+## Detalhes de Implementação
+
+- **Paginação**: A aplicação exibe 10 produtos por página e permite navegar entre as páginas.
+- **Cache**: Utilizamos React Query para gerenciar o cache dos dados, evitando requisições desnecessárias ao servidor.
+- **Estilo**: A maior parte da interface utiliza classes do Tailwind CSS, com um componente de botão estilizado utilizando Styled Components.
