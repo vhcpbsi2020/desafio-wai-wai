@@ -115,10 +115,6 @@ const ProductDetail: React.FC = () => {
             </div>
 
             <div className="flex space-x-4">
-              <StyledButton primary size="large" className="flex-1">
-                Adicionar ao Carrinho
-              </StyledButton>
-
               <StyledButton size="large" onClick={() => navigate("/")}>
                 Voltar
               </StyledButton>
